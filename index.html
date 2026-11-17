@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NAOPAKI — Visual Works</title>
+  <meta name="description" content="NAOPAKI. Photography and video, turned inside out.">
+  <meta name="theme-color" content="#0A0B0D">
+  <meta property="og:title" content="NAOPAKI">
+  <meta property="og:description" content="Photography and video, turned inside out.">
+  <meta property="og:image" content="assets/brand/og-image.jpg">
+  <link rel="icon" type="image/png" href="assets/brand/favicon.png">
+  <link rel="preload" href="assets/brand/PirataOne-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="bar">
+    <a href="#top" class="bar__seal" aria-label="NAOPAKI — back to top">
+      <img src="assets/brand/seal.svg" alt="" width="40" height="40">
+    </a>
+    <span class="bar__mid mono">VISUAL WORKS / EST. 2026</span>
+    <nav class="bar__nav mono" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <video class="hero__bg" src="assets/video/placeholder-loop.mp4" poster="assets/video/placeholder-poster.jpg"
+             autoplay muted loop playsinline aria-hidden="true"></video>
+      <h1 class="hero__logo">
+        <img src="assets/brand/logo-full.svg" alt="NAOPAKI" width="858" height="263">
+      </h1>
+      <p class="hero__tag mono">PHOTO <span>/</span> VIDEO <span>/</span> SOUND [SOON]</p>
+      <div class="hero__corner hero__corner--l mono">INDEX <span id="count-hero">000</span></div>
+      <a class="hero__corner hero__corner--r mono" href="#work">SCROLL ↓</a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee mono" aria-hidden="true">
+      <div class="marquee__track">
+        <span>NAOPAKI ✕ INSIDE OUT ✕ NO RULES ✕ NO SHINE ✕ NAOPAKI ✕ INSIDE OUT ✕ NO RULES ✕ NO SHINE ✕&nbsp;</span>
+        <span>NAOPAKI ✕ INSIDE OUT ✕ NO RULES ✕ NO SHINE ✕ NAOPAKI ✕ INSIDE OUT ✕ NO RULES ✕ NO SHINE ✕&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ============ WORK ============ -->
+    <section class="work" id="work">
+      <div class="sec-head">
+        <h2 class="sec-head__title">WORK <sup class="mono" id="count-work">[00]</sup></h2>
+        <div class="sec-head__controls mono">
+          <div class="toggle" role="group" aria-label="Filter">
+            <button class="is-on" data-filter="ALL">All</button>
+            <button data-filter="PHOTO">Photo</button>
+            <button data-filter="VIDEO">Video</button>
+          </div>
+          <div class="toggle" role="group" aria-label="View">
+            <button class="is-on" data-view="list">List</button>
+            <button data-view="grid">Grid</button>
+          </div>
+        </div>
+      </div>
+
+      <ol class="work__list" id="work-list" data-view="list"></ol>
+      <img class="hover-preview" id="hover-preview" alt="" aria-hidden="true">
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+      <div class="sec-head"><h2 class="sec-head__title">ABOUT</h2></div>
+      <p class="about__statement">
+        Naopaki means <em>inside out</em>. Backwards. The wrong way round.
+        We are a two-person crew making photographs and moving images that keep the
+        seams showing — raw light, real places, no polish for the sake of polish.
+      </p>
+      <div class="about__cols mono">
+        <dl>
+          <dt>We make</dt>
+          <dd>Photoshoots<br>Music videos<br>Visualisers<br>Press &amp; cover art</dd>
+        </dl>
+        <dl>
+          <dt>Status</dt>
+          <dd>Independent.<br>Label in progress.</dd>
+        </dl>
+        <dl>
+          <dt>Approach</dt>
+          <dd>Small crew. Fast hands.<br>Every frame turned twice.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="sec-head"><h2 class="sec-head__title">CONTACT</h2></div>
+      <a class="contact__mail" href="mailto:hello@naopaki.com">HELLO@NAOPAKI.COM</a>
+      <ul class="contact__social mono">
+        <li><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram <span>@naopaki</span></a></li>
+        <li><a href="https://tiktok.com/" target="_blank" rel="noopener">TikTok <span>@naopaki</span></a></li>
+        <li><a href="https://youtube.com/" target="_blank" rel="noopener">YouTube <span>@naopaki</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot">
+    <img class="foot__logo" src="assets/brand/logo-full.svg" alt="NAOPAKI" loading="lazy">
+    <div class="foot__row mono">
+      <span>© <span id="year">2026</span> NAOPAKI</span>
+      <span>ALL WORK TURNED INSIDE OUT</span>
+      <a href="#top">BACK TO TOP ↑</a>
+    </div>
+  </footer>
+
+  <!-- ============ PROJECT VIEW (opens on click) ============ -->
+  <div class="project" id="project" role="dialog" aria-modal="true" aria-labelledby="project-title" tabindex="-1" hidden>
+    <div class="project__bar mono">
+      <button class="project__close" data-close>← Back <span class="dim">[ESC]</span></button>
+      <span class="project__index" id="project-index">01 / 08</span>
+      <span class="project__nav">
+        <button data-step="-1">Prev</button>
+        <button data-step="1">Next</button>
+      </span>
+    </div>
+    <div class="project__scroll" id="project-scroll">
+      <header class="project__head">
+        <h2 class="project__title" id="project-title">Title</h2>
+        <p class="project__meta mono" id="project-meta"></p>
+      </header>
+      <div class="project__media" id="project-media"></div>
+      <a class="project__next" id="project-next" href="#">
+        <span class="mono">Next project →</span>
+        <strong id="project-next-title">Title</strong>
+      </a>
+    </div>
+  </div>
+
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
