@@ -18,6 +18,7 @@
   const track = $(".marquee__track");
   function buildMarquee() {
     const text = track.dataset.text;
+    if (!text) return;
     track.innerHTML = "";
     const half = document.createElement("div");
     half.style.display = "flex";
@@ -30,7 +31,7 @@
     track.appendChild(half.cloneNode(true));
     track.style.setProperty("--marquee-time", (half.scrollWidth / 60) + "s"); // ~60px per second at any width
   }
-  buildMarquee();
+  try { buildMarquee(); } catch (e) { /* keep the text already in the page */ }
   let mqTimer;
   window.addEventListener("resize", () => { clearTimeout(mqTimer); mqTimer = setTimeout(buildMarquee, 200); });
 
