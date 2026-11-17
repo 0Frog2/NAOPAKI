@@ -12,6 +12,28 @@
   $("#count-work").textContent = "[" + pad(projects.length) + "]";
   $("#year").textContent = new Date().getFullYear();
 
+  /* ---------- endless marquee ----------
+     One "half" is filled with the phrase until it is wider than the screen,
+     then the half is duplicated; the track slides exactly one half and loops. */
+  const track = $(".marquee__track");
+  function buildMarquee() {
+    const text = track.dataset.text;
+    track.innerHTML = "";
+    const half = document.createElement("div");
+    half.style.display = "flex";
+    track.appendChild(half);
+    do {
+      const s = document.createElement("span");
+      s.textContent = text;
+      half.appendChild(s);
+    } while (half.scrollWidth < window.innerWidth + 200 && half.children.length < 50);
+    track.appendChild(half.cloneNode(true));
+    track.style.setProperty("--marquee-time", (half.scrollWidth / 60) + "s"); // ~60px per second at any width
+  }
+  buildMarquee();
+  let mqTimer;
+  window.addEventListener("resize", () => { clearTimeout(mqTimer); mqTimer = setTimeout(buildMarquee, 200); });
+
   /* ---------- build work list ---------- */
   const list = $("#work-list");
   list.innerHTML = projects.map((p, i) => `
